@@ -1,0 +1,203 @@
+<style type="text/css">
+	.modal.bottom-sheet {
+		max-height: 85% !important;
+	}
+</style>
+
+
+
+<div class="mn-content fixed-sidebar">
+    <header class="mn-header navbar-fixed">
+        <nav class="teal lighten-1">
+            <div class="nav-wrapper row">
+                <section class="material-design-hamburger navigation-toggle">
+                    <a href="javascript:void(0)" data-activates="slide-out" class="button-collapse show-on-large material-design-hamburger__icon">
+                        <span class="material-design-hamburger__layer"></span>
+                    </a>
+                </section>
+                <div class="header-title col s3 m3">      
+                    <span class="chapter-title">Coopers and Smith</span>
+                </div>
+                <ul class="right col s9 m3 nav-right-menu">
+                    <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
+                    <li class="hide-on-med-and-up"><a href="javascript:void(0)" class="search-toggle"><i class="material-icons">search</i></a></li>
+                </ul>
+                
+                <ul id="dropdown1" class="dropdown-content notifications-dropdown">
+                    <li class="notificatoins-dropdown-container">
+                        <ul>
+                            <li class="notification-drop-title">Today</li>
+                            <li>
+                                <a href="#!">
+                                <div class="notification">
+                                    <div class="notification-icon circle cyan"><i class="material-icons">done</i></div>
+                                    <div class="notification-text"><p><b>Alan Grey</b> uploaded new theme</p><span>7 min ago</span></div>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                <div class="notification">
+                                    <div class="notification-icon circle deep-purple"><i class="material-icons">cached</i></div>
+                                    <div class="notification-text"><p><b>Tom</b> updated status</p><span>14 min ago</span></div>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                <div class="notification">
+                                    <div class="notification-icon circle red"><i class="material-icons">delete</i></div>
+                                    <div class="notification-text"><p><b>Amily Lee</b> deleted account</p><span>28 min ago</span></div>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                <div class="notification">
+                                    <div class="notification-icon circle cyan"><i class="material-icons">person_add</i></div>
+                                    <div class="notification-text"><p><b>Tom Simpson</b> registered</p><span>2 hrs ago</span></div>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                <div class="notification">
+                                    <div class="notification-icon circle green"><i class="material-icons">file_upload</i></div>
+                                    <div class="notification-text"><p>Finished uploading files</p><span>4 hrs ago</span></div>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="notification-drop-title">Yestarday</li>
+                            <li>
+                                <a href="#!">
+                                <div class="notification">
+                                    <div class="notification-icon circle green"><i class="material-icons">security</i></div>
+                                    <div class="notification-text"><p>Security issues fixed</p><span>16 hrs ago</span></div>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                <div class="notification">
+                                    <div class="notification-icon circle indigo"><i class="material-icons">file_download</i></div>
+                                    <div class="notification-text"><p>Finished downloading files</p><span>22 hrs ago</span></div>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                <div class="notification">
+                                    <div class="notification-icon circle cyan"><i class="material-icons">code</i></div>
+                                    <div class="notification-text"><p>Code changes were saved</p><span>1 day ago</span></div>
+                                </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <%= render 'dashboards/side_nav' %>
+    
+    <main class="mn-inner inner-active-sidebar">
+        <div class="middle-content">
+
+            <div class="row no-m-t no-m-b">
+                
+                <div class="col s12 m12 l12">
+                    <div id="chat-container" style="height: 400px !important; width: 100% !important;"></div>
+                </div>
+
+            </div>
+
+            <div class="col s12 m12 l12">
+                
+                
+                       
+                        <div id="modal3" class="modal bottom-sheet" style="z-index: 1003; display: block; opacity: 0; bottom: -100%;">
+                            <div class="modal-content">
+                                <!-- Calendly inline widget begin -->
+								
+								<div class="calendly-inline-widget" data-url="https://calendly.com/coopers-and-smith" style="min-width:320px;height:580px;"></div>
+								<style type="text/css">
+									.branding {
+										display: none !important;
+									}
+								</style>
+								<script type="text/javascript" src="https://calendly.com/assets/external/widget.js"></script>
+								
+								<!-- Calendly inline widget end -->
+                            </div>
+                        </div>
+                   
+                
+            </div>
+           
+
+    </div>
+
+
+        <div class="inner-sidebar">
+            <span class="inner-sidebar-title">YOUR BOKKEEPING NINJAS</span>
+            <div class="message-list">
+            	<div class="info-item message-item"><img class="circle" src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/images/profile-image-2.png" alt=""><div class="message-info"><div class="message-author">Ned Flanders</div></div></div>
+            	<div class="info-item message-item"><img class="circle" src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/images/profile-image.png" alt=""><div class="message-info"><div class="message-author">Peter Griffin</div></div></div>
+            	<div class="info-item message-item"><img class="circle" src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/images/profile-image-1.png" alt=""><div class="message-info"><div class="message-author">Lisa Simpson</div></div></div>
+            </div>
+            <span class="inner-sidebar-title">Events</span>
+            <span class="info-item">Envato meeting<span class="new badge">12</span></span>
+            <div class="inner-sidebar-divider"></div>
+            <span class="info-item">Google I/O</span>
+            <div class="inner-sidebar-divider"></div>
+            <span class="info-item disabled">No more events scheduled</span>
+            <div class="inner-sidebar-divider"></div>
+            
+            
+            
+        </div>
+    </main>
+</div>
+<div class="left-sidebar-hover"></div>
+
+
+
+<!-- Javascripts -->
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/materialize/js/materialize.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/counter-up-master/jquery.counterup.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/flot/jquery.flot.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/flot/jquery.flot.time.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/flot/jquery.flot.symbol.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/curvedlines/curvedLines.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/peity/jquery.peity.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/js/alpha.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/js/pages/dashboard.js"></script>
+
+
+
+<script src="https://cdn.smooch.io/smooch.min.js"></script>
+<script>
+    Smooch.init({ 
+        appToken: 'baneldq1bdmnk7rb17c5p9vrk',
+        userId: "<%= current_user.id %>",
+        embedded: true,
+        emailCaptureEnabled: true
+    })
+	  .then(function() {
+	    Smooch.updateUser({
+	      givenName: "<%= current_user.company_name %>",
+	      email: "<%= current_user.email %>",
+	      signedUpAt: "<%= current_user.created_at"
+	    })   
+	  });
+
+    Smooch.render(document.getElementById('chat-container'));
+</script> 

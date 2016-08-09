@@ -1,15 +1,39 @@
-<h2>Forgot your password?</h2>
+<%= render 'layouts/loader' %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+<div class="mn-content valign-wrapper signin-page">
+	<main class="mn-inner container ">
+	    <div class="valign">
+	          <div class="row">
+	              <div class="col s12 m6 l4 offset-l4 offset-m3">
+	                  <div class="card white darken-1">
+	                      <div class="card-content ">
+	                          <span class="card-title">Forgot Password</span>
+	                           <div class="row">
+	                               <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+									  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-  </div>
+									  <div class="input-field col s12">
+									    <%= f.input :email, required: true, id: "email" %>
+									  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
+									  <div class="col s12 right-align m-t-sm">
+									    <%= f.button :submit, "Reset", class: "waves-effect waves-light btn teal" %>
+									    <br>
+									    <%= render "users/shared/links" %>
+									  </div>
+									<% end %>
+	                          </div>
+	                      </div>
+	                  </div>
+	              </div>
+	        </div>
+	    </div>
+	</main>
+</div>
 
-<%= render "users/shared/links" %>
+<!-- Javascripts -->
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/materialize/js/materialize.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/js/alpha.min.js"></script>

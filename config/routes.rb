@@ -4,11 +4,21 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  authenticated :user do
-    root 'dashboards#index', as: :authenticated_user
+  # authenticated :user do
+  #   root 'dashboards#index', as: :authenticated_user
+  # end
+
+  devise_scope :user do
+    authenticated :user do
+      root 'dashboards#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
   end
 
-  root 'pages#index'
+  # root 'registrations#new'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,15 +1,41 @@
-<h2>Log in</h2>
+<%= render 'layouts/loader' %>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+<div class="mn-content valign-wrapper signin-page">
+    <main class="mn-inner container">
+        <div class="valign">
+              <div class="row">
+                  <div class="col s12 m6 l4 offset-l4 offset-m3">
+                      <div class="card white darken-1">
+                          <div class="card-content ">
+                              <span class="card-title">Sign In</span>
+                               <div class="row">
+                                   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
+            									  	<div class="input-field col s12">
+            									    	<%= f.input :email, required: false, id: "email" %>
+            										  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+            										<div class="input-field col s12">
+            									    	<%= f.input :password, required: false, id: "email" %>
+            									    </div>
+            									  <div class="col s12 right-align m-t-sm">
+            									    <%= f.button :submit, "Sign In", class: "waves-effect waves-light btn teal" %>
+            									    <br>
+            									    <%= render "users/shared/links" %>
+            									  </div>
+            									<% end %>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+</div>
 
-<%= render "users/shared/links" %>
+<!-- Javascripts -->
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/materialize/js/materialize.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/js/alpha.min.js"></script>
