@@ -30,7 +30,7 @@
 						  </div>
 
 						    <div class="input-field col s12">
-						    	<%= f.input :user_id, as: :select, :collection => User.all.collect{|u| [u.company_name, u.id]}, :prompt => "Users" %>
+						    	<%= f.input :user_id, as: :select, :collection => User.where(admin: false).collect{|u| [u.company_name, u.id]} , :prompt => "Users" %>
 						    </div>
 
 						  </div>
