@@ -17,10 +17,12 @@
                         	<span class="card-title">CLIENTS LIST</span>
                             <ul class="collection with-header">
                             	<% @users.each do |user| %>
-                                	<li class="collection-item"><div><%= user.company_name %><%= link_to user, class: "secondary-content" do %>
+                            		<% if !user.admin? %>
+                                		<li class="collection-item"><div><%= user.company_name %><%= link_to user, class: "secondary-content" do %>
                                 			<i class="material-icons">send</i>
                                 		<% end %>
                                 		</div></li>
+                                	<% end %>
                             	<% end %>    
                             </ul>
                     	</div>
