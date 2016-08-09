@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  resources :after_signup
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   root 'pages#index'
   
