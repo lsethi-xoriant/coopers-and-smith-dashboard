@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :streams
   get 'dashboards/index'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
-
+  resources :users, only: [:show]
   # authenticated :user do
   #   root 'dashboards#index', as: :authenticated_user
   # end

@@ -6,7 +6,7 @@
             </div>
             <div class="sidebar-profile-info">
                 <a href="javascript:void(0);" class="account-settings-link">
-                    <p><%= current_user.company_name %></p>
+                    <p>Welcome, Admin!</p>
                     <span>marko manojlovic<i class="material-icons right">arrow_drop_down</i></span>
                 </a>
             </div>
@@ -25,18 +25,21 @@
             </ul>
         </div>
     <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-        <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.html"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-        <!--<li class="no-padding">
-            <a class="waves-effect waves-grey" href="notifications.html"><i class="material-icons">notifications_none</i>Notifications</a>
-        </li>-->
         <li class="no-padding">
-        	<a class="waves-effect waves-grey modal-trigger" href="#modal3"><i class="material-icons">perm_contact_calendar</i>Book Appointment</a>
-
+        	<%= link_to dashboards_index_path, class: "waves-effect waves-grey" do %>
+        		<i class="material-icons">settings_input_svideo</i>Dashboard
+        	<% end %>
+	        <li class="no-padding">
+	        	<%= link_to streams_path, class: "waves-effect waves-grey" do %>
+	        		<i class="material-icons">view_stream</i>Streams
+	        	<% end %>
+	            <!--<a class="waves-effect waves-grey" href="notifications.html"><i class="material-icons">notifications_none</i>Notifications</a>-->
+	        </li>
         	
         </li>
-        <li class="no-padding">
+        <!--<li class="no-padding">
             <a class="waves-effect waves-grey" href="month-end-checklist.html"><i class="material-icons">done</i>Month-End Checklist</a>
-        </li>
+        </li>-->
     </ul>
     <div class="footer">
         <p class="copyright">Coopers and Smith ©</p>

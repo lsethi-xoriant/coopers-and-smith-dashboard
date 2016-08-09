@@ -1,3 +1,5 @@
+<%= render 'layouts/loader' %>
+
 <div class="mn-content fixed-sidebar">
     
     <%= render 'dashboards/header' %>
@@ -14,17 +16,32 @@
                 <div class="col s12 m12 l12" style="margin-top: 30px;">
                     <div class="card stats-card">
                         <div class="card-content">
-                        	<span class="card-title">CLIENTS LIST</span>
-                            <ul class="collection with-header">
-                            	<% @users.each do |user| %>
-                                	<li class="collection-item"><div><%= user.company_name %><%= link_to user, class: "secondary-content" do %>
-                                			<i class="material-icons">send</i>
-                                		<% end %>
-                                		</div></li>
-                            	<% end %>    
-                            </ul>
-                    	</div>
-                	</div>
+                          <span class="card-title">Activity Streams</span>
+                          <%= link_to new_stream_path, class: "btn-floating btn-large waves-effect waves-light green" do %>
+                            <i class="material-icons">add</i>
+                          <% end %>
+                            <table class="responsive-table" style="margin-top: 50px;">
+                              <thead>
+                                <tr>
+                                  <th>Streams</th>
+                                  <th>Client</th>
+                                  <th colspan="3"></th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                <% @streams.each do |stream| %>
+                                  <tr>
+                                    <td><%= stream.title %></td>
+                                    <td><%= stream.user.company_name %></td>
+                                    <td><%= link_to 'Edit', edit_stream_path(stream) %></td>
+                                    <td><%= link_to 'Delete', stream, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                  </tr>
+                                <% end %>
+                              </tbody>
+                            </table>
+                      </div>
+                  </div>
                 </div>
             </div>
     </div>
@@ -53,4 +70,3 @@
 <script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/curvedlines/curvedLines.js"></script>
 <script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/peity/jquery.peity.min.js"></script>
 <script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/js/alpha.min.js"></script>
-<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/js/pages/dashboard.js"></script>

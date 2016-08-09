@@ -1,0 +1,50 @@
+<aside id="slide-out" class="side-nav white fixed">
+    <div class="side-nav-wrapper">
+        <div class="sidebar-profile">
+            <div class="sidebar-profile-image">
+                <img src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/images/profile-image.png" class="circle" alt="">
+            </div>
+            <div class="sidebar-profile-info">
+                <a href="javascript:void(0);" class="account-settings-link">
+                    <p><%= current_user.company_name %></p>
+                    <span>marko manojlovic<i class="material-icons right">arrow_drop_down</i></span>
+                </a>
+            </div>
+        </div>
+        <div class="sidebar-account-settings">
+            <ul>
+                <li class="no-padding">
+                    <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Account Settings</a>
+                </li>
+                <li class="divider"></li>
+                <li class="no-padding">
+                    <%= link_to destroy_user_session_path, :method => :delete, class: "waves-effect waves-grey" do %>
+                        <i class="material-icons">exit_to_app</i>Sign Out
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+    <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
+        <li class="no-padding">
+            <%= link_to dashboards_index_path, class: "waves-effect waves-grey" do %>
+                <i class="material-icons">settings_input_svideo</i>Dashboard
+            <% end %>
+        </li>
+        <!--<li class="no-padding">
+            <a class="waves-effect waves-grey" href="notifications.html"><i class="material-icons">notifications_none</i>Notifications</a>
+        </li>-->
+        <li class="no-padding">
+        	<a class="waves-effect waves-grey modal-trigger" href="#modal3"><i class="material-icons">perm_contact_calendar</i>Book Appointment</a>
+
+        	
+        </li>
+        <li class="no-padding">
+            <a class="waves-effect waves-grey" href="month-end-checklist.html"><i class="material-icons">done</i>Month-End Checklist</a>
+        </li>
+    </ul>
+    <div class="footer">
+        <p class="copyright">Coopers and Smith ©</p>
+        <a href="#!">Privacy</a> &amp; <a href="#!">Terms</a>
+    </div>
+    </div>
+</aside>

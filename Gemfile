@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'simple_form'
 gem 'devise'
+gem 'cancancan', '~> 1.10'
 
 
 # Use ActiveModel has_secure_password

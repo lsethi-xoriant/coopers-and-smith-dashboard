@@ -1,0 +1,73 @@
+<main class="mn-inner">
+    <div class="row">
+        <div class="col s12">
+            <div class="page-title">Add Activity Stream</div>
+        </div>
+        
+        <div class="col s12 m12 l6">
+
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="row">
+
+                    	<%= simple_form_for(@stream) do |f| %>
+						  <%= f.error_notification %>
+
+						  <div class="input-field col s12">
+						  	
+						  	<%= f.input :title, id: "icon_prefix2", class: "materialize-textarea" %>
+						  </div>
+
+						  <div class="input-field col s12">
+						  	
+						  	<%= f.input :body, id: "icon_prefix2", class: "materialize-textarea" %>
+						  </div>
+
+						  <div class="input-field col s12">
+						  	
+						  	<%= f.input :link, id: "icon_prefix2", class: "materialize-textarea", label: "Paste link to the document here if you have it" %>
+						  </div>
+
+						    <div class="input-field col s12">
+						    	<%= f.input :user_id, as: :select, :collection => User.all.collect{|u| [u.company_name, u.id]}, :prompt => "Users" %>
+						    </div>
+
+						  </div>
+
+						  
+
+
+						  <div class="form-actions" style="margin-top: 100px;">
+						    <%= f.button :submit %>
+						  </div>
+						<% end %>
+
+
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div>
+    
+</main>
+
+
+
+
+
+
+
+
+<!-- Javascripts -->
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/materialize/js/materialize.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/js/alpha.min.js"></script>
+<script src="http://res.cloudinary.com/coopersandsmith/raw/upload/assets/js/pages/form_elements.js"></script>

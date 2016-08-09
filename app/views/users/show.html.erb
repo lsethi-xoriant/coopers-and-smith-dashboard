@@ -1,3 +1,5 @@
+<%= render 'layouts/loader' %>
+
 <div class="mn-content fixed-sidebar">
     
     <%= render 'dashboards/header' %>
@@ -14,15 +16,8 @@
                 <div class="col s12 m12 l12" style="margin-top: 30px;">
                     <div class="card stats-card">
                         <div class="card-content">
-                        	<span class="card-title">CLIENTS LIST</span>
-                            <ul class="collection with-header">
-                            	<% @users.each do |user| %>
-                                	<li class="collection-item"><div><%= user.company_name %><%= link_to user, class: "secondary-content" do %>
-                                			<i class="material-icons">send</i>
-                                		<% end %>
-                                		</div></li>
-                            	<% end %>    
-                            </ul>
+                        	<span class="card-title"><%= @user.company_name %></span>
+                            
                     	</div>
                 	</div>
                 </div>

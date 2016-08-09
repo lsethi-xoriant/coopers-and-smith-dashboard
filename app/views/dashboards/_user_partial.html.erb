@@ -7,99 +7,9 @@
 
 
 <div class="mn-content fixed-sidebar">
-    <header class="mn-header navbar-fixed">
-        <nav class="teal lighten-1">
-            <div class="nav-wrapper row">
-                <section class="material-design-hamburger navigation-toggle">
-                    <a href="javascript:void(0)" data-activates="slide-out" class="button-collapse show-on-large material-design-hamburger__icon">
-                        <span class="material-design-hamburger__layer"></span>
-                    </a>
-                </section>
-                <div class="header-title col s3 m3">      
-                    <span class="chapter-title">Coopers and Smith</span>
-                </div>
-                <ul class="right col s9 m3 nav-right-menu">
-                    <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
-                    <li class="hide-on-med-and-up"><a href="javascript:void(0)" class="search-toggle"><i class="material-icons">search</i></a></li>
-                </ul>
-                
-                <ul id="dropdown1" class="dropdown-content notifications-dropdown">
-                    <li class="notificatoins-dropdown-container">
-                        <ul>
-                            <li class="notification-drop-title">Today</li>
-                            <li>
-                                <a href="#!">
-                                <div class="notification">
-                                    <div class="notification-icon circle cyan"><i class="material-icons">done</i></div>
-                                    <div class="notification-text"><p><b>Alan Grey</b> uploaded new theme</p><span>7 min ago</span></div>
-                                </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                <div class="notification">
-                                    <div class="notification-icon circle deep-purple"><i class="material-icons">cached</i></div>
-                                    <div class="notification-text"><p><b>Tom</b> updated status</p><span>14 min ago</span></div>
-                                </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                <div class="notification">
-                                    <div class="notification-icon circle red"><i class="material-icons">delete</i></div>
-                                    <div class="notification-text"><p><b>Amily Lee</b> deleted account</p><span>28 min ago</span></div>
-                                </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                <div class="notification">
-                                    <div class="notification-icon circle cyan"><i class="material-icons">person_add</i></div>
-                                    <div class="notification-text"><p><b>Tom Simpson</b> registered</p><span>2 hrs ago</span></div>
-                                </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                <div class="notification">
-                                    <div class="notification-icon circle green"><i class="material-icons">file_upload</i></div>
-                                    <div class="notification-text"><p>Finished uploading files</p><span>4 hrs ago</span></div>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="notification-drop-title">Yestarday</li>
-                            <li>
-                                <a href="#!">
-                                <div class="notification">
-                                    <div class="notification-icon circle green"><i class="material-icons">security</i></div>
-                                    <div class="notification-text"><p>Security issues fixed</p><span>16 hrs ago</span></div>
-                                </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                <div class="notification">
-                                    <div class="notification-icon circle indigo"><i class="material-icons">file_download</i></div>
-                                    <div class="notification-text"><p>Finished downloading files</p><span>22 hrs ago</span></div>
-                                </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                <div class="notification">
-                                    <div class="notification-icon circle cyan"><i class="material-icons">code</i></div>
-                                    <div class="notification-text"><p>Code changes were saved</p><span>1 day ago</span></div>
-                                </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <%= render 'dashboards/header' %>
 
-    <%= render 'dashboards/side_nav' %>
+    <%= render 'dashboards/user_side_nav' %>
     
     <main class="mn-inner inner-active-sidebar">
         <div class="middle-content">
@@ -112,25 +22,58 @@
 
             </div>
 
+
+            <div class="row no-m-t no-m-b">
+                
+                <div class="col s12 m12 l12" style="margin-top: 30px;">
+                    <div class="card stats-card">
+                        <div class="card-content">
+                            
+                            <span class="card-title">ACTIVITY STREAM</span>
+                            
+                            <% @streams.each do |stream| %>
+
+                                <div class="card hoverable small">
+                                    <div class="card-image">
+                                        <img src="http://res.cloudinary.com/coopersandsmith/image/upload/v1470772456/assets/images/ACTIVITY-STREAM-RED.jpg" alt="">
+                                        <span class="card-title"><%= stream.title %></span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p><%= stream.body %></p>
+                                    </div>
+                                    <% if stream.link.present? %>
+                                        <div class="card-action">
+                                            <%= link_to "CLICK HERE", stream.link, target: "_blank" %>
+                                        </div>
+                                    <% end %>
+                                </div>
+                                
+                            <% end %>
+
+                    </div>
+                </div>
+                </div>
+
+            </div>
+
+
+
             <div class="col s12 m12 l12">
-                
-                
-                       
-                        <div id="modal3" class="modal bottom-sheet" style="z-index: 1003; display: block; opacity: 0; bottom: -100%;">
-                            <div class="modal-content">
-                                <!-- Calendly inline widget begin -->
-								
-								<div class="calendly-inline-widget" data-url="https://calendly.com/coopers-and-smith" style="min-width:320px;height:580px;"></div>
-								<style type="text/css">
-									.branding {
-										display: none !important;
-									}
-								</style>
-								<script type="text/javascript" src="https://calendly.com/assets/external/widget.js"></script>
-								
-								<!-- Calendly inline widget end -->
-                            </div>
-                        </div>
+                <div id="modal3" class="modal bottom-sheet" style="z-index: 1003; display: block; opacity: 0; bottom: -100%;">
+                    <div class="modal-content">
+                        <!-- Calendly inline widget begin -->
+						
+						<div class="calendly-inline-widget" data-url="https://calendly.com/coopers-and-smith" style="min-width:320px;height:580px;"></div>
+						<style type="text/css">
+							.branding {
+								display: none !important;
+							}
+						</style>
+						<script type="text/javascript" src="https://calendly.com/assets/external/widget.js"></script>
+						
+						<!-- Calendly inline widget end -->
+                    </div>
+                </div>
             </div>
            
 
